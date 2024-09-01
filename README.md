@@ -7,9 +7,9 @@ It makes use of the concepts to add,search,update and delete books from the
 selected bookstore.
 
 # TABLE OF CONTENTS 
-1.Installations
-1.Usage
-1.Credits
+1. Installations
+2. Usage
+2. Credits
 
 # 1.Installation
 
