@@ -29,6 +29,9 @@ updated to our database and we can confirm this by opening the *DB Browser(SQLit
 select the database from it's root folder and once it's opened you go to *BROWSE DATA* and this is where you
 will see all the changes you made to your database.
 
+![Python Screenshot](https://github.com/TawongaTaibu/project_task2/blob/main/readme.png)
+![DB Browser(SQLite) Screenshot](https://github.com/TawongaTaibu/project_task2/blob/main/readme2.png)
+
 # 3.Credits
 #References
 #https://www.w3schools.com/sql/sql_ref_database.asp
