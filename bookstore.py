@@ -1,14 +1,12 @@
-#Name:Tawonga Taibu
-#Task Name: Capstone Project Databases
-#Task Number: 13
-
-#In this task, we're going also to use functions to perform specific tasks for our programs 
-
 import sqlite3
 
 # This function makes sure that we create our table if it does not exist
 # Additionally, the table is populated with different books
 def initialize_db():
+    """
+    Initializes the database and creates the 'book' table if it does not exist.
+    Also populates the table with a set of predefined books.
+    """
     db = sqlite3.connect('database/ebookstore.db')
     cursor = db.cursor()
     
@@ -41,10 +39,20 @@ def initialize_db():
 
 # Connect to the database
 def connect_db():
+    """
+    Establishes a connection to the 'ebookstore' database.
+
+    Returns:
+        sqlite3.Connection: A connection object to interact with the database.
+    """
     return sqlite3.connect('database/ebookstore.db')
 
 #This function allows the user to add a new book 
 def add_book():
+    """
+    Prompts the user to enter details for a new book (ID, title, author, quantity)
+    and adds the book to the 'book' table in the database.
+    """
     db = connect_db()
     cursor = db.cursor()
     id = int(input("Enter book ID: "))
@@ -58,6 +66,10 @@ def add_book():
 
 # Update book information
 def update_book():
+    """
+    Prompts the user to enter a book ID and allows them to update the book's title,
+    author, and/or quantity. The changes are saved to the 'book' table in the database.
+    """
     db = connect_db()
     cursor = db.cursor()
     id = int(input("Enter book ID to update: "))
@@ -78,6 +90,10 @@ def update_book():
 
 #This fucntion allows the user to delete a book by prompting them to enter a book's ID
 def delete_book():
+    """
+    Prompts the user to enter a book ID and deletes the corresponding book
+    from the 'book' table in the database.
+    """
     db = connect_db()
     cursor = db.cursor()
     id = int(input("Enter book ID to delete: "))
@@ -89,6 +105,10 @@ def delete_book():
 #This function allows the user to search for a certain book
 #Specifically through the author or title of the book
 def search_books():
+    """
+    Prompts the user to enter a search term (either part of a title or author name).
+    Searches the 'book' table for matching records and displays the results.
+    """
     db = connect_db()
     cursor = db.cursor()
     search_term = input("Enter title or author to search: ")
@@ -105,14 +125,18 @@ def search_books():
 
 #This is the menu function which pops up first when a user has visited the program
 def menu():
-    initialize_db()  #Initialize database and table
+    """
+    Displays a menu for the user to interact with the program.
+    The user can add, update, delete, or search for books, or exit the program.
+    """
+    initialize_db()  # Initialize database and table
     while True:
         print("\nMenu:")
-        print("1.Enter to add a new book")
-        print("2.Update a book")
-        print("3.Delete a book")
-        print("4.Search for a book")
-        print("0.Exit")
+        print("1. Enter to add a new book")
+        print("2. Update a book")
+        print("3. Delete a book")
+        print("4. Search for a book")
+        print("0. Exit")
         choice = input("Select an option: ")
         
         if choice == '1':
@@ -132,6 +156,6 @@ def menu():
 if __name__ == '__main__':
     menu()
 
-#References
-#https://www.w3schools.com/sql/sql_ref_database.asp
-#https://www.w3schools.com/python/python_functions.asp
+# References
+# https://www.w3schools.com/sql/sql_ref_database.asp
+# https://www.w3schools.com/python/python_functions.asp
